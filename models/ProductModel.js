@@ -23,7 +23,7 @@ const productSchama = mongoose.Schema({
         type:String,
         required:true,
         enum:{
-            value:["kg","litter","pcs"],
+            values:["kg","litter","pcs"],
             message:"unit value can't be {VALUE}, must be kg/litter/pcs"
         },
     },
@@ -48,7 +48,7 @@ const productSchama = mongoose.Schema({
         type:String,
         required:true,
         enum:{
-            value:["in-stock","ut-of-stock","discontinued"],
+            values:["in-stock","ut-of-stock","discontinued"],
             message:"status can't be {VALUE}",
         }
     },
@@ -73,5 +73,5 @@ const productSchama = mongoose.Schema({
 
 const Product = mongoose.model("Product",productSchama);
 
-module.exports=Product;
+module.exports = Product;
 

@@ -20,9 +20,13 @@ app.use(cors());
 
 
 // database connection 
-mongoose.connect(process.env.DATABASE).then(()=>{
+mongoose.connect(process.env.DATABASE,{useNewUrlParser: true, useUnifiedTopology: true})
+.then(()=>{
     console.log("database connected")
 })
+.catch((err) => console.log(err))
+
+
 
 // routing
 app.use('/api/v1/user',userRouter);
